@@ -1,0 +1,195 @@
+/* ####################################################
+NOTE
+scss file for Staff Reports
+###################################################
+*/
+
+@import "bootstrap-responsive";
+
+
+
+$gridFluidColumnWidth: 6.38298%;
+$gridFluidGutterWidth: 2.12766%;
+
+@mixin makeFluidRow() {
+  width: 100%;
+  @include clearfix();
+}
+@mixin makeFluidColumn($columns: 1, $offset: 0, $marginRate: 1) {
+  float: left;
+  margin-left: (($gridFluidColumnWidth * $offset) + ($gridFluidGutterWidth * ($offset - 1)) + ($gridFluidGutterWidth * 2)) * $marginRate;
+  width: ($gridFluidColumnWidth * $columns) + ($gridFluidGutterWidth * ($columns - 1));
+  
+  &:first-child {
+    margin-left: 0;
+  }
+}
+@mixin pull_Left {
+	float: left;
+}
+
+$margin_padding: 15px;
+
+.ya-article {
+  @include makeFluidRow();
+  .ya-staff-reports {
+    @include makeFluidColumn(9);
+    h3 {
+    	margin-bottom: 1px;
+    }
+    > article {
+    	margin-bottom: 130px;
+    }
+    .ya-widget {
+    	h2 {
+    		border-bottom: 1px solid #D6CDBF;
+		    margin-bottom: 5px;
+		    padding-bottom: 7px;
+    	}
+    }
+  }
+  .ya-left-sidebar {
+    @include makeFluidColumn(3);
+  }
+}
+
+
+
+
+$yellow: #E5A053;
+$lead_font_size: 16px;
+.main-box {
+  padding: $margin_padding * 2;
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}
+.ya-run-report {
+	@include makeFluidColumn(8, 0 ,0);
+	@include clearfix();
+	float: none;
+
+	background-color: #FFF9E6;
+	border: 2px solid #333;
+	border-radius: 3px;
+	padding: 10px 0 7px;
+	margin: $margin_padding * 2 0 $margin_padding;
+
+	input[type='radio'] {
+	  float:left;
+	  margin-right: 5px;
+	  + label {
+	    float: left;
+	  }
+	}
+	.ya-run-report-item {
+		margin: 0 2.5%;
+		float: left;
+	}
+}
+.ya-staff-reports-alert {
+	color: #C09853;
+}
+.ya-staff-reports-block  {
+	@include makeFluidRow();
+	margin: $margin_padding * 2 0;
+}
+.ya-organization-list {
+	float: left;
+	> div {
+		float:left;
+		margin-right: $margin_padding * 2;
+	}
+	.ya-select-org-btngroup {
+		> button {
+			&:first-child {
+	    		margin-top: 0;
+	  		}
+	  		width: 150px;
+		}
+	}
+}
+.ya-view-report-btn {
+	float: right;
+	margin-top: 0;
+	width: 160px;
+	margin-right: $margin_padding * 3;
+}
+.ya-select-organization  {
+	select {
+		min-height: 200px;
+		max-width: 150px;
+	}
+}
+.ya-financial-reports {
+	ul {
+		list-style: none outside none;
+		margin: $margin_padding / 2 $margin_padding;
+	}
+}
+/*datepicker*/
+.ui-datepicker-trigger {
+    cursor: pointer;
+    float: left;
+    margin: 4px 5px;
+}
+.ui-datepicker {
+    font-size: 12px;
+}
+.ya-staff-datepicker {
+	float: left;
+	width: 100px;
+}
+.ya-staff-datepicker-label {
+	float: left;
+	font-weight: normal;
+	margin: 5px 10px 0 0;
+}
+/*datepicker*/
+select {
+  color: black;
+  option { 
+    color: black; 
+  }
+}
+select.ya-empty { 
+  color: gray; 
+}
+
+.ya-staff-reports-date {
+	@include pull_Left;
+}
+.ya-staff-reports-date-from {
+	@include pull_Left;
+}
+.ya-staff-reports-date-to {
+	margin-left: $margin_padding * 2;
+	@include pull_Left;
+}
+.ya-payment-type {
+	label {
+		@include pull_Left;
+	}
+}
+.ya-batch-ctrl-group {
+	@include pull_Left;
+	label {
+		width: 130px;
+		@include pull_Left;
+		margin-top: 5px;
+	}
+	span {
+		margin: 5px 0 0 5px;
+		@include pull_Left;
+	}
+	#payment-type {
+		width: 160px;
+	}
+	#batch-number {
+		width: 147px;
+		@include pull_Left;
+	}
+}
+span[data-icon='D'] + span[data-icon='D'] {
+	margin-left: -22px;
+}

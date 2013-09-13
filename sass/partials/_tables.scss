@@ -1,0 +1,55 @@
+
+
+// ################ DATA TABLES ###########################
+
+// Overrides Bootstrap's adding outer rounded table border
+.table-striped{
+	border: 1px solid $light-grey;
+  border-collapse: separate;
+  *border-collapse: collapse;
+  -webkit-border-radius: $default-radius;
+     -moz-border-radius: $default-radius;
+          border-radius: $default-radius;
+}
+
+td.ya-right-border{
+	border-right: 1px solid $light-grey;
+}
+// Striped table row
+.ya-striped, .ya-row-striped{
+	background-color: $light-tan; 
+}
+
+.ya-row-red{
+	background-color: $light-red;
+}
+.ya-row-yellow{
+	background-color: $light-yellow;
+}
+.ya-row-green{
+	background-color: $light-green;
+}
+
+// ###################### INFORMATION TABLES ####################
+
+// For data labels like Address or First Name as plain text (not forms)
+.ya-label{
+	@include font-regular;
+	font-size: fontCalc(14);
+}
+td.ya-label {
+	padding-right: $default-margin;
+	vertical-align: top;
+}
+// Display only values
+.ya-value{
+	@include font-bold;
+	font-size: fontCalc(14);
+}
+// Displaying total dollar values at the bottom of tables and receipts
+.ya-total{
+	@include font-bold;
+	color: $dark-yellow;
+	font-size: fontCalc(16);
+}
+

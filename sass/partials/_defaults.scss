@@ -1,0 +1,403 @@
+/* DEFAULTS ###################################### */
+
+// The default font-size is set to 100% of the browser style sheet (usually 16px)
+// for compatibility with browser-based text zoom or user-set defaults.
+$default-font-size: 100% !default;
+
+// $default-line-height is 24px while $default-font-size is 16px
+$default-line-height: 150%;
+$em-base: 16px !default;
+$default-margin: 10px !default;
+$default-radius: 6px;  // for tables, notes, input boxes, etc.
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
+@function emCalc($pxWidth) {
+  @return $pxWidth / $em-base * 1em;
+}
+
+// This will allow us to change the font universally in our media queries
+$default-pixel-font: 16px;  // Most browsers have a default of 16px
+@function fontCalc($pxSize) {
+  @return ($default-pixel-font/16)  * $pxSize; 
+}
+
+
+// Apply border-box to everything except input boxes
+// This wrecks out skin?? Try on the live site
+ 
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input {
+    box-sizing: content-box;
+}
+
+
+// COLORS ##########################################
+
+// REDS
+$red: #B4341D;             // Base red, h1, action links
+$light-red: #FFEBE8;       // Warning backgrounds
+
+// BLUES
+$blue: #003E8C;            // Navigation links
+$light-blue: #BEDEFF;
+
+// YELLOWS
+$yellow: #E9B422;          // Yellow buttons
+$light-yellow: #FCF8E3;    // Staff notes background
+$dark-yellow: #E7A241;     // Totals at table footer, help icon, help header
+
+// GREENS
+$green: #A1CC86;           // Green buttons
+$light-green: #DAF2D7;     // Table row added
+$dark-green: #39874C;      // Green badge
+
+// GREYS
+$grey: #888888;            // Default icon color
+$ultra-light-grey: #FBFBFB;// Notes area background
+$light-grey: #EDECEA;     // 
+$medium-grey: #C2B4A0;      // Table borders
+$dark-gray: #888888;       // Default icon color
+
+// BROWNS
+$brown: #696151;           // Subheadings
+$light-brown: #AFA58F;     // Quotes, disabled text
+$dark-brown: #4E453E;     // Body text
+$light-tan: #FAF6F1;       // Table row stripe
+$medium-tan: #F3EFEB;      // 
+
+$border-color: lighten($medium-grey, 10%);
+
+// ########################## MIXINS ######################
+
+@mixin grid-test{
+	.btn {
+	  margin-top: 20px;
+	  margin-bottom: 20px;
+	}
+
+	td{
+	  border: 1px solid grey;
+	}
+	[class*="span"] {
+		border: 1px solid green;
+		}
+	.row-fluid{
+	  background-color: rgba(22, 22, 22, .05)
+	}
+}
+
+
+// #################### FONTS #########################
+
+@import "partials/fonts";
+
+// ###################### BORDERS ####################
+
+@mixin default-border {
+	border: 1px solid $border-color;
+	border-radius: $default-radius;
+} 
+
+@mixin large-box-shadow{
+	-moz-box-shadow:2px 2px 4px rgba(0,0,0,0.27);
+	-webkit-box-shadow:2px 2px 4px rgba(0,0,0,0.27);
+	box-shadow:2px 2px 4px rgba(0,0,0,0.27);
+	-ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX=2,OffY=2,Color=#45000000,Positive=true)";
+	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2,OffY=2,Color=#45000000,Positive=true);
+}
+
+// BOX SIZING
+@mixin box-sizing {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	box-sizing: border-box; *behavior: url(http://positivefutures.com/ya/boxsizing.htc); /* For IE 6 & 7 */
+}
+// http://css-tricks.com/box-sizing/ 
+// https://github.com/Schepp/box-sizing-polyfill - the IE 6 & 7 fix 
+
+// ######################## END MIXINS #############################
+
+
+// ###################### OVERRIDING BOOTSTRAP ##################################
+
+// drop any added padding so container can collpase totally
+section.collapse {
+  padding: 0 !important;
+  box-shadow: none;
+  margin:0;
+  	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	border:none;
+}
+
+
+body {
+	@include font-regular;
+	font-size: fontCalc(14);
+	color: $dark-brown;
+}
+
+
+
+// ################### TYPOGRAPHY ####################################
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  line-height: 1.1em;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1 {
+  @include font-regular;
+  font-size: fontCalc(36);
+  color: $red;
+}
+
+h2 {
+	@include font-semi-bold;
+  font-size: fontCalc(28);
+}
+
+h3, legend {
+	@include font-semi-bold;
+  font-size: fontCalc(20);
+}
+
+h4 {
+	@include font-semi-bold;
+  font-size: fontCalc(16);
+}
+
+h5 {
+	@include font-semi-bold;
+  font-size: fontCalc(14);
+  color: $dark-gray;
+}
+
+h6 {
+  @include font-regular;
+  font-size: fontCalc(13);
+  color: $light-brown;
+}
+
+a{
+	color: $blue;
+	font-size: fontCalc(14);
+}
+
+strong {
+  font-weight: 700px;
+}
+
+hr {
+  margin: 20px 0;
+  border-top: none;
+  border-bottom: 1px solid $light-brown;
+}
+
+blockquote p {
+  @include font-regular;
+  font-size: fontCalc(18);
+  line-height: 1.25;
+}
+.muted{
+	color:$light-brown;
+}
+
+
+// ############################ LABELS / ALERTS #######################
+
+.text-warning{}
+.text-error{}
+.text-info{}
+.text-success{}
+
+.alert {
+	padding-right: 3em;
+	position:relative;
+	background-color: $light-yellow;
+	border: 1px solid $yellow;
+}
+
+.alert span {
+	float: right;
+	font-size: fontCalc(20);
+	position: relative;
+	right: -$default-margin*3.5;
+}
+.alert-error {
+	background-color: $light-red;
+	border: 1px solid $red;
+}
+.alert-info {
+	background-color: $light-blue;
+	border: 1px solid $blue;
+}
+.alert-warning {
+	background-color: $light-yellow;
+	border: 1px solid $yellow;
+}
+.ya-badge-yellow, .ya-badge-green, .ya-badge-red{ 
+	@include font-bold;
+}
+.ya-badge-yellow{
+	border-color: $dark-yellow;
+	color: $dark-yellow;
+};
+.ya-badge-green{
+	border-color: $dark-green;
+	color: $dark-green;
+};
+.ya-badge-red{
+	border-color: $red;
+	color: $red;
+};
+
+
+// pill labels
+.label{
+	@include font-regular;
+	border-radius: 20px;
+	color: $dark-brown;
+	background-color: $light-brown;
+	padding: 3px 10px;
+}
+.ya-light-label{
+	background-color: $medium-tan;
+}
+
+
+
+
+// ######################## LEFT MENU #####################
+
+.ya-context-menu {
+  //@include default-border;
+  //width: 100%;
+  //margin: ($default-margin * 3) 0 0;
+  //padding: 10;
+  //background-color: #fff;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+          box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  margin-bottom: $default-margin * 3;
+  ul {
+    padding: 0;
+  }
+  li span[data-icon]{
+    margin-right: $default-margin;
+    position-top: 32px;
+    font-size: fontCalc(20);
+    color: $grey;
+  }
+  li  a {
+    font-size: fontCalc(15);
+    display: block;
+    // width: 190px \9;
+    width: 100%;
+    margin: 0 0 -1px;
+    padding: 6px 14px;
+    border: 1px solid $border-color;
+  }
+  li:first-child > a {
+    -webkit-border-radius: 6px 6px 0 0;
+       -moz-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+  }
+  li:last-child > a {
+    -webkit-border-radius: 0 0 6px 6px;
+       -moz-border-radius: 0 0 6px 6px;
+            border-radius: 0 0 6px 6px;
+  }
+  .active > a {
+    background-color: $light-tan;
+    color: $dark-brown;
+    position: relative;
+    z-index: 2;
+    padding: 7px 15px;
+    border: 1px solid $border-color;
+    text-shadow: 0 1px 0 rgba(0,0,0,.15);
+    -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+       -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+            box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+  }
+}
+
+
+// ####################### OTHER ############################
+
+div.logo{}
+abbr{}
+//<abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
+address{}
+// <address>
+//   <strong>Twitter, Inc.</strong><br>
+//   795 Folsom Ave, Suite 600<br>
+//   San Francisco, CA 94107<br>
+//   <abbr title="Phone">P:</abbr> (123) 456-7890
+// </address>
+blockquote{}
+ul{}
+ol{}
+dl{}
+label{
+  @include font-bold;
+}
+input{}
+button{}
+// Search Form
+// <form class="form-search">
+//   <input type="text" class="input-medium search-query">
+//   <button type="submit" class="btn">Search</button>
+// </form>
+input.input-medium.search-query{}
+.progress {
+	margin: $default-margin 0;
+}
+
+.breadcrumb {
+	@include default-border;
+}
+label.radio {
+	@include font-regular;
+}
+.btn {
+	margin: $default-margin auto;
+}
+
+
+// Dollar totals
+.ya-total{
+	color: $dark-yellow;
+}
+// Dollar totals at the bottom of tables
+table.table .ya-total{
+	color: $dark-yellow;
+	font-size: fontCalc(16);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

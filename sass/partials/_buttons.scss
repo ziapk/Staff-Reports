@@ -1,0 +1,113 @@
+// get positioning so we can move the icon font in the span down
+
+.btn{
+	position: relative;
+	padding-left: $default-margin * 1.5;
+	padding-right: $default-margin * 1.5;
+}
+
+.btn-large {
+	padding-left: $default-margin * 2;
+	padding-right: $default-margin * 2;
+}
+
+// bump icon font down a few pixels
+.btn span {
+	@include opacity(0.85);
+	font-size: fontCalc(16);
+	margin-right: 10px;
+	position: relative;
+	top: 2px; 	
+}
+// make the icon font fit within the button or anchor tag
+.btn-large span {
+	font-size: fontCalc(32);
+	margin-right: 15px;
+	position: relative;
+	display: inline-block;
+	margin-top: -20px;
+	top: 8px;
+}
+.ya-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.btn-warning {
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #E5A045;
+	*background-color: #E5A045;
+	background-image: -moz-linear-gradient(top, #FFCA00, #E5A045);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFCA00), to(#E5A045));
+	background-image: -webkit-linear-gradient(top, #FFCA00, #E5A045);
+	background-image: -o-linear-gradient(top, #FFCA00, #E5A045);
+	background-image: linear-gradient(to bottom, #FFCA00, #E5A045);
+	background-repeat: repeat-x;
+	border-color: #E5A045;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFCA00', endColorstr='#E5A045', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning.active,
+.btn-warning.disabled,
+.btn-warning[disabled] {
+	background-color: #E5A045;
+	*background-color: #003bb3;
+}
+
+.btn-danger {
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #B83512;
+	*background-color: #B83512;
+	background-image: -moz-linear-gradient(top, #E55842, #B83512);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E55842), to(#B83512));
+	background-image: -webkit-linear-gradient(top, #E55842, #B83512);
+	background-image: -o-linear-gradient(top, #E55842, #B83512);
+	background-image: linear-gradient(to bottom, #E55842, #B83512);
+	background-repeat: repeat-x;
+	border-color: #B83512;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E55842', endColorstr='#B83512', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger.active,
+.btn-danger.disabled,
+.btn-danger[disabled] {
+	color: #FFFFFF;
+	background-color: #B83512;
+	*background-color: #003bb3;
+}
+
+.btn-success {
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #8FB576;
+	*background-color: #8FB576;
+	background-image: -moz-linear-gradient(top, #A4D584, #8FB576);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A4D584), to(#8FB576));
+	background-image: -webkit-linear-gradient(top, #A4D584, #8FB576);
+	background-image: -o-linear-gradient(top, #A4D584, #8FB576);
+	background-image: linear-gradient(to bottom, #A4D584, #8FB576);
+	background-repeat: repeat-x;
+	border-color: #8FB576;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A4D584', endColorstr='#8FB576', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+	color: #FFFFFF;
+	background-color: #8FB576;
+	*background-color: #003bb3;
+}

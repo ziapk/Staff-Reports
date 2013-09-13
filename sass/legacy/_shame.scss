@@ -1,0 +1,117 @@
+/* A set of bug fixes that haven't had the time to go back and apply and organize properly, h/t @chriscoyier http://css-tricks.com/sass-style-guide/ */
+
+.sidebar-total {
+	font: 36px $sansSerif;
+	color: $orange2;
+}
+
+.table-invoice-total {
+	width: 100%;
+}
+
+.table-highlight {
+	background: #fbf7f2;
+}
+
+.table-bold {
+	font-family: $sansSerifBold;
+}
+
+tfoot {
+	tr {
+		font: 16px $sansSerifBold;
+		color: $orange2;
+		
+		.download-pdf {
+			font: 13px $sansSerif;
+			color: $red3;
+			
+			a {
+				color: $red3;
+			}
+		}
+	}
+}
+
+.btn-green {
+	border: 1px solid #86aa70;
+	color: white;
+	font: 20px $sansSerifBold;
+	@include text-shadow(rgba(87,154,45,1) 0 -1px 0);
+	@include background(linear-gradient(#a1cc86, #8fb577));
+	
+	&:hover {
+		color: white;
+		@include background(#8fb577);
+	}
+}
+
+.added-icon {
+	height: 30px;
+	width: 45px;
+	@include background(image-url('icon_added.png') center no-repeat);
+	overflow: hidden;
+}
+
+.remove-icon {
+  height: 16px;
+  width: 16px;
+  @include background(image-url('icon_remove.png') no-repeat);
+  overflow: hidden; 
+  text-decoration: none !important;
+}
+ 
+.add-icon {
+  height: 16px;
+  width: 16px;
+  @include background(image-url('icon_add.png') no-repeat);
+  overflow: hidden;
+  display: inline-block;
+}
+
+.paypal {
+	width: 229px !important;
+	height: 49px !important;
+	text-indent: -999px;
+	border: 0;
+	@include background(image-url('paypal_button.png') no-repeat);
+	
+	&:hover {
+		@include background(image-url('paypal_button.png') no-repeat);
+	}
+}
+
+.module-table {
+	width: 100%;
+	
+	tr {
+		th {
+			word-wrap: break-word;
+		}
+	}
+}
+
+.track-table {
+	border: 0;
+	
+	th {
+		border-top: 0 !important;
+		font-family: $sansSerifSemibold;
+		border: 0;
+	}
+	
+	td {
+		border-bottom: 1px solid #ddd;
+		border-left: 0;
+		border-right: 0;
+	}
+}
+
+table {
+	td, th {
+		div {
+			white-space: pre-wrap !important;
+			word-wrap: break-word;
+		}
+	}
+}

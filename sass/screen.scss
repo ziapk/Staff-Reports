@@ -1,0 +1,404 @@
+/* ####################################################
+NOTE
+I am coding styles using SASS (.scss) which is then compiled using Compass into this .css
+
+This file is currently a rough work in progress and such I haven't yet cleaned, organized, or documented it properly. I hope to in the next few days. 
+
+For now, if you can, link (in the <head> after all other stylesheets) directly to this file in my Dropbox so you'll always have the latest clean version. We'll consolidate into one or very few stylesheets later
+
+Created by Jeff Baker
+###################################################
+*/
+@import "compass";
+
+/* LEGACY CODE - TO CLEAN OUT */
+
+// // From Marcello 
+// @import "legacy/variables";
+// @import "legacy/global";
+// @import "legacy/forms";
+// @import "legacy/registration";
+// @import "legacy/shame";
+// @import "legacy/skin";
+// @import "legacy/syllabus";
+
+// My styles
+@import "partials/defaults";  // defaults, variables,functions
+@import "partials/login"; // login forms
+@import "partials/buttons"; 
+@import "partials/tables";
+
+
+ 
+
+// YA CLASSES ###################################
+
+.ya-widget {
+	@include box-sizing;  // ??? Not required if the global one works
+	margin-bottom: $default-margin * 3;
+	padding-top: 0;
+
+	h3 {
+		border-bottom: 1px solid $border-color;
+		margin-bottom: $default-margin * 1.5;
+		padding-bottom: $default-margin/2;
+	}
+}
+// Yellow containers - contain edit forms  
+.ya-edit-box {
+	@include default-border; 
+	@include large-box-shadow;
+	@include box-sizing;
+    background-color:$light-yellow;
+	border-radius: $default-radius;
+	padding: $default-margin * 2;
+	margin-bottom: $default-margin*2;
+
+    h3 {
+    	margin-top: 0;
+    }
+
+    label {
+    	padding-left:4px;
+    	margin-bottom: 2px;
+    }
+
+    label.radio {
+		font-size: fontCalc(12);
+		input[type="radio"]{
+    	margin: 2px 5px 0 0;
+    	}
+    }
+    label.checkbox {
+  
+    	input[type="checkbox"]{
+			margin: 3px 7px 0 0;
+		}
+    }
+	.row-fluid {
+		margin-bottom: $default-margin;
+	}
+	input, select {
+		margin-bottom: 0;
+	}
+	.btn {
+		margin-top: $default-margin * 2;
+		margin-bottom: 0;
+	}
+}
+
+// little yellow edit button
+.ya-edit-button{
+	width: 30px;
+	height: 30px;
+	background-color: $yellow;
+	position: absolute; 
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+	border: 1px solid white;
+	border-radius: 3px;
+	span[data-icon]{
+		margin: 0;
+	}
+	&:hover, &:focus{
+		background-color: lighten($yellow, 20%);
+		color: white;
+	}
+	&:active {
+		color: $dark-yellow;
+		border-color: $dark-yellow;
+	}
+}
+
+// Dates under h4 for now
+.ya-subtitle{
+	@include font-italic;
+}
+// Highlights a div that is ediable
+.ya-editable-region {
+	border: 1px dotted $light-grey;
+	border-radius: 6px;
+	position:relative;
+	&:hover{
+		background-color: darken(white, 10%);
+		border: 1px solid $medium-grey;
+     -webkit-transition: background-color 200ms linear;
+     -moz-transition: background-color 200ms linear;
+     -o-transition: background-color 200ms linear;
+     -ms-transition: background-color 200ms linear;
+     transition: background-color 200ms linear;
+	}
+
+}
+
+// Publish box on Edit Profile
+.ya-control-box {
+	@include box-sizing;
+	background-color: $ultra-light-grey;
+	border: 1px solid $medium-grey;
+	border-radius:6px;
+	padding: ($default-radius * 3) ($default-radius * 3);
+	
+	h4{
+		margin-top: $default-margin/2;
+	}
+	h3 {
+		border: none;
+	}
+
+}
+
+// Help icon
+.ya-help {
+	color: $dark-yellow;
+}
+sup a.ya-help {
+	font-size: .6em;
+}
+
+// ################## LINKS #######################
+// blue links that are not part of regular p text
+.ya-link{
+	@include font-semi-bold;
+}
+// red action-oriented links
+.ya-action{
+	@include font-semi-bold;
+	color: $red;
+}
+
+// ################# TAGLINE ####################
+// the tagline next to the logo
+.ya-tagline{
+	color: $red;
+	font-size: fontCalc(28);
+}
+
+
+
+// #################### ICONS ##########################################
+span[data-icon] {
+	margin-right: .4em;
+}
+
+//Little up and down arrows for show and hide need to be bigger
+span[data-icon="E"], span[data-icon="C"]{
+	font-size: 120%;
+}
+
+// ################## SOCIAL MEDIA ICONS ##################
+.ya-twitter {
+	color: #00AEF3;
+}
+.ya-facebook {
+	color: #24589E;
+}
+.ya-pinterest {
+	color: #CF1912;
+}
+
+
+// ################# SECTION CLASSES #################
+// classes associated with individual sections or pages
+
+// ######################## MY PROFILE #####################
+.ya-small-profile .ya-edit-button, .ya-profile .ya-edit-button{
+	bottom: 5px;
+	right: 5px;
+}
+// Small grey box around teaching hours
+.ya-teaching-hours {
+	background-color:$medium-grey;
+	border: 1px solid $dark-brown;
+	text-align: center;
+	padding: $default-margin * 2;
+}
+// List of yoga types in sidebar
+.ya-yoga-types {
+	li {
+		@include font-bold;
+		font-size: fontCalc(14);
+	}
+}
+
+// My Profile widget
+.ya-profile {
+	address {
+		margin: 0;
+	}
+	& .ya-social-media-icons span {
+		font-size: 30px;
+		margin-right: $default-margin;
+	}
+	p {
+		margin-top: $default-margin*1.5;
+	}
+}
+
+// Training experience widget
+.ya-training-experience h4 {
+	margin: 4px 0 0 0;
+}
+// Certificates and awards widget
+.ya-awards{
+	ul {
+		list-style-type: none;
+		margin:0 0 $default-margin*2 0;
+		padding: 0;
+		li {
+			margin: 0 0 $default-margin 0;
+			padding: 0;
+		}
+	}
+	a.ya-link span[data-icon]{
+		color: $grey;
+		font-size: 32px;
+		float: left;
+		padding-bottom: 4px;
+	}
+	p {
+		clear: both;
+	}
+}
+.ya-i-teach {
+
+	label.checkbox {
+		margin: 6px 0 6px 6px;
+	}
+}
+
+
+// ################# PAGE REVIEW QUEUE 2 ##################
+
+.container-fluid {
+	background-color: white;
+	max-width: 1170px;
+	margin: 0 auto;
+	border-radius: 6px;
+	border: 1px solid $dark-brown;
+}
+
+//@include grid-test;
+
+span[data-icon]{
+	margin-right: .4em;
+}
+
+.ya-section {
+	margin-bottom: $default-margin * 3;
+	
+	h2 {
+		border-bottom: 1px solid $border-color;
+		margin-bottom: $default-margin * 2;
+	}
+
+}
+
+.ya-designation-icon {
+  font-size: 150px;
+  color: #6B6B6B;
+  text-align: center;
+}
+
+// Applcation Review
+.ya-application-details {
+	// we don't need a border under the school name here
+	h2 {
+		border-bottom: none;
+	}
+
+}
+.ya-school-track-info {
+	@include default-border;
+	padding: ($default-margin) ($default-margin * 2) ;
+}
+
+
+// make the dd of the key above a table semi-bold
+.ya-abbreviation-key dd{
+	@include font-semi-bold;
+}
+.ya-review-queue-notes{
+	background-color: $ultra-light-grey;
+}
+.ya-review-queue-notes img{
+	border-radius: $default-radius;
+}
+.ya-review-queue-notes label{
+	@include font-bold;
+	font-size: fontCalc(14);
+}
+.ya-review-queue-notes input[type='checkbox']{
+	height:16px;
+	width: 16px;
+}
+.ya-client-note{
+	border: 2px solid $dark-brown;
+	border-radius: $default-radius;
+}
+.ya-staff-note, .ya-internal-note, .ya-client-note{
+	@include font-semi-bold;
+}
+.ya-signature h5{
+	@include font-semi-bold;
+}
+.ya-signature p{
+	@include font-regular;
+	color: $light-brown;
+}
+// Staff page
+.ya-internal-note{
+	background-color: $light-yellow;
+	h4{
+		@include font-bold;	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

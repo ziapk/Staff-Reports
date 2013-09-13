@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>Home Page</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery.ui.all.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link href="css/screen.css" rel="stylesheet" media="screen">
+    <link href="css/staff-reports.css" rel="stylesheet" media="screen">
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/modernizr.custom.82095.js"></script>
+    <!--[if lte IE 6]>    
+    <script type="text/javascript">
+		$(function(){
+			if( !($('html').hasClass('boxsizing')) ){
+				$('.ya-widget, textarea').each(function(){
+					var fullW = $(this).outerWidth(),
+						actualW = $(this).width(),
+						wDiff = fullW - actualW,
+						newW = actualW - wDiff;
+					$(this).css('width',newW);
+				});
+			}
+		});
+	</script>
+    <![endif]-->    
+    <script src="js/staff-reports.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid page-header ya-pageheader">
+<!--header start -->
+<header>
+    <div class=" container">
+        <div class="row-fluid">
+            <div class="span3 ya-logo">
+                <a href="#"><img src="images/logo.png" alt="Logo"></a>
+            </div><!--End span2 -->
+            <div class="span9 ya-tagline">
+                 <h2>many paths, one yoga alliance</h2>
+            </div><!--End span10 -->
+        </div><!--End row-fluid -->
+    </div><!--container-->
+</header>
+<!--header end -->
+</div><!--container-fluid page-header ya-pageheader -->
+
+<!--navigation start -->
+<div class="nav-wrap ya-pagenav">
+    <div class="container">
+	    <nav>
+            <a class="ya-action menu-btn visible-phone" href="#"><span data-icon="&#x68;"></span> Menu</a>
+            <ul  class="inline">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Reasons to Join</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Get Involved</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul><!--ya-pagenav -->
+		</nav>
+    </div><!--End container -->        
+</div><!--nav-wrap -->
+<!--navigation end -->
+<div class="ya-account-bar">
+	<div class="container">
+    	
+        <ul class="inline">
+	        <li><a href="#" class="ya-link">Create Account</a></li>
+            <li><a href="#" class="ya-link">Sign In</a></li>
+        </ul> 
+    </div><!--container -->
+</div><!--ya-account-bar -->
+
+
+<!--main start -->
+<div class="container">
+<div class="ya-main-content">
+	<div class="row-fluid">
+        <div class="container-fluid main-box">
+            <main class="ya-article">	
+                <aside class="ya-left-sidebar">
+                    <!-- ad space content -->&nbsp;
+                    <div style="height: 300px;"></div><!-- This are just temporary div for left menu -->
+                    <nav class="ya-financial-reports">
+                       <h3>Financial Reports</h3>
+                       <ul>
+                          <li><a href="#">Revenue Analysis</a></li>
+                          <li><a href="#">Debits & Credit</a></li>
+                          <li><a href="#">Credit Invoices</a></li>
+                          <li><a href="#">Batch Distribution Summaries</a></li>
+                          <li><a href="#">Batch Transaction Listing</a></li>
+                       </ul>
+                    </nav>
+        
+        
+                </aside><!-- end left sidebar -->
+        
+                <!-- ################ Staff Reports ############### --> 
+                <section class="ya-staff-reports">
+                    <!-- ################ Revenue Analysis ############### --> 
+                    <article class="ya-widget ya-revenue-analysis">
+                        <h2>Revenue Analysis</h2>
+                        <p>A brief description of the report. Here is what this report is all about. Doesn't need much</p>
+                        <div class="ya-run-report">
+                            <div class="ya-run-report-item"><label>Run Report For:</label></div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="revenue-c6"/>
+                                <label for="revenue-c6">Yoga Alliance - c(6)</label>
+                            </div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="revenue-c3"/>
+                                <label for="revenue-c3">Yoga Alliance Registry- c(3)</label>
+                            </div>
+                            
+                        </div>
+                        <div class="ya-staff-reports-alert">
+                            <span data-icon="&#x52;" aria-hidden="true"></span>
+                            Please select an organization to run this report for: 
+                        </div><!-- end alert -->
+                        <div class="ya-select-organization ya-staff-reports-block">
+                            <div class="ya-organization-list">	
+                                <div class="ya-gl-codes">	
+                                    <select multiple="multiple">
+                                        <option value="1">q0012345</option>
+                                        <option value="2">q0023843</option>
+                                        <option value="3">q00483728</option>
+                                    </select>
+                                </div>
+                                <div class="ya-select-org-btngroup">
+                                    <button type="button" class="btn">
+                                        Select All
+                                        <span data-icon="&#x44;" aria-hidden="true"></span>
+                                        <span data-icon="&#x44;" aria-hidden="true"></span>
+                                    </button><br/>
+                                    <button type="button" class="btn">
+                                        Add
+                                        <span data-icon="&#x44;" aria-hidden="true"></span>
+                                    </button><br/>
+                                    <button type="button" class="btn">
+                                        <span data-icon="&#x46;" aria-hidden="true"></span>
+                                        Remove
+                                    </button>
+                                </div>
+                                <div class="ya-included-report">	
+                                    <select multiple="multiple">
+                                        <option value="1">q00773848</option>
+                                        <option value="2">q008348237</option>
+                                    </select>
+                                </div>
+                            </div>	
+                            <button type="button" class="btn ya-view-report-btn">
+                                <span data-icon="&#x77;" aria-hidden="true"></span>View Report
+                            </button>
+        
+                        </div>
+                        <!-- SAMPLE REPORT SCREENSHOT -->
+                        <img src="#" class="ya-sample-report">
+                    </article><!-- end Revenue Analysis -->
+                    
+                
+                    <!-- ############## Debits and Credits ############## -->
+                    <article class="ya-widget ya-debit-credit">
+                        <h2>Debits and Credits</h2>
+                        <p>A brief description of the report. Here is what this report is all about. Doesn't need much</p>
+                        <div class="ya-run-report">
+                            <div class="ya-run-report-item"><label>Run Report For:</label></div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="debit-credit-c6"/>
+                                <label for="debit-credit-c6">Yoga Alliance - c(6)</label>
+                            </div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="debit-credit-c3"/>
+                                <label for="debit-credit-c3">Yoga Alliance Registry- c(3)</label>
+                            </div>
+                            
+                        </div>
+                        <div class="ya-staff-reports-block">
+                            <div class="ya-staff-reports-date">	
+                                <div class="ya-staff-reports-date-from">
+                                    <label class="ya-staff-datepicker-label">From</label>
+                                    <input type="text" class="ya-staff-datepicker"/>
+                                </div>
+                                <div class="ya-staff-reports-date-to">
+                                    <label class="ya-staff-datepicker-label">To</label>
+                                    <input type="text" class="ya-staff-datepicker"/>
+                                </div>
+                            </div>	
+                            <button type="button" class="btn ya-view-report-btn">
+                                <span data-icon="&#x77;" aria-hidden="true"></span>View Report
+                            </button>
+        
+                        </div>
+                        <!-- SAMPLE REPORT SCREENSHOT -->
+                        <img src="#" class="ya-sample-report">
+                    </article><!-- end Debits and Credits -->
+                    
+                    <!-- ############## Credit Invoices ############## -->
+                    <article class="ya-widget ya-credit-invoices">
+                        <h2>Credit Invoices</h2>
+                        <p>A brief description of the report. Here is what this report is all about. Doesn't need much</p>
+                        <div class="ya-run-report">
+                            <div class="ya-run-report-item"><label>Run Report For:</label></div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="credit-invoices-c6"/>
+                                <label for="credit-invoices-c6">Yoga Alliance - c(6)</label>
+                            </div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="credit-invoices-c3"/>
+                                <label for="credit-invoices-c3">Yoga Alliance Registry- c(3)</label>
+                            </div>
+                            
+                        </div>
+                        <div class="ya-staff-reports-block">
+                            <div class="ya-staff-reports-date">	
+                                <div class="ya-staff-reports-date-from">
+                                    <label class="ya-staff-datepicker-label">From</label>
+                                    <input type="text" class="ya-staff-datepicker"/>
+                                </div>
+                                <div class="ya-staff-reports-date-to">
+                                    <label class="ya-staff-datepicker-label">To</label>
+                                    <input type="text" class="ya-staff-datepicker"/>
+                                </div>
+                            </div>	
+                            <button type="button" class="btn ya-view-report-btn">
+                                <span data-icon="&#x77;" aria-hidden="true"></span>View Report
+                            </button>
+        
+                        </div>
+                        <!-- SAMPLE REPORT SCREENSHOT -->
+                        <img src="#" class="ya-sample-report">
+        
+                    </article><!-- end Credit Invoices -->
+                    
+                    <!-- ############## Batch Distribution Summaries ############## -->
+                    <article class="ya-widget ya-batch-distribution">
+                        <h2>Batch Distribution Summaries</h2>
+                        <p>A brief description of the report. Here is what this report is all about. Doesn't need much</p>
+                        <div class="ya-run-report">
+                            <div class="ya-run-report-item"><label>Run Report For:</label></div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="batch-distribution-c6"/>
+                                <label for="batch-distribution-c6">Yoga Alliance - c(6)</label>
+                            </div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="batch-distribution-c3"/>
+                                <label for="batch-distribution-c3">Yoga Alliance Registry- c(3)</label>
+                            </div>
+                            
+                        </div>
+                        <div class="ya-staff-reports-block">
+                            <div class="ya-staff-reports-date">	
+                                <div class="ya-staff-reports-date-from">
+                                    <label class="ya-staff-datepicker-label">Day</label>
+                                    <input type="text" class="ya-staff-datepicker"/>
+                                </div>
+                            </div>	
+                            <button type="button" class="btn ya-view-report-btn">
+                                <span data-icon="&#x77;" aria-hidden="true"></span>View Report
+                            </button>
+        
+                        </div>
+                        <!-- SAMPLE REPORT SCREENSHOT -->
+                        <img src="#" class="ya-sample-report">
+        
+                    </article><!-- end Batch Distribution Summaries -->
+                    
+                    <!-- ############## Batch Distribution Summaries ############## -->
+                    <article class="ya-widget ya-batch-transaction">
+                        <h2>Batch Transaction Log</h2>
+                        <p>A brief description of the report. Here is what this report is all about. Doesn't need much</p>
+                        <div class="ya-run-report">
+                            <div class="ya-run-report-item"><label>Run Report For:</label></div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="batch-transaction-c6"/>
+                                <label for="batch-transaction-c6">Yoga Alliance - c(6)</label>
+                            </div>
+                            <div class="ya-run-report-item">
+                                <input type="radio" id="batch-transaction-c3"/>
+                                <label for="batch-transaction-c3">Yoga Alliance Registry- c(3)</label>
+                            </div>
+                            
+                        </div>
+                        <div class="ya-staff-reports-block">
+                            <div class="ya-batch-ctrl-group">	
+                                <div class="ya-staff-reports-date">
+                                    <label>Day</label>
+                                    <input type="text" class="ya-staff-datepicker"/>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="ya-payment-type">
+                                    <label for="payment-type">Payment Type</label>
+                                    <select id="payment-type">
+                                        <option value="0" selected="selected">Select All</option>
+                                        <option value="1">test1</option>
+                                        <option value="2">test2</option>
+                                    </select>
+                                </div>
+                                <div class="ya-staff-reports-date">
+                                    <label for="batch-number">Batch Number</label>
+                                    <input type="text" id="batch-number"/> <span>(optional)</span>
+                                </div>
+                            </div>	
+                            <button type="button" class="btn ya-view-report-btn">
+                                <span data-icon="&#x77;" aria-hidden="true"></span>View Report
+                            </button>
+        
+                        </div>
+                        <!-- SAMPLE REPORT SCREENSHOT -->
+                        <img src="#" class="ya-sample-report">
+        
+                    </article><!-- end Batch Distribution Summaries -->
+                    
+                </section><!-- END Staff Reports -->
+        
+            </main><!-- end article -->		
+        </div>
+    </div>
+</div>
+</div><!--End Container -->
+<!--main end -->
+
+
+<!--footer start -->
+<footer class="ya-footer-wrap">
+	<div class="ya-footer-top">
+        <div class="container ">
+        	<img src="images/footer_logo.png" alt="">
+        </div>
+     </div>
+    <ul class="ya-footer-bottom inline">
+        <li>Copyright 2013 by Yoga Alliance</li>
+        <li class="divider">|</li>
+        <li>1701 Clarendon Boulevard, Suite 110</li>
+        <li class="divider">|</li>
+        <li>Arlington, VA 22209</li>
+        <li class="divider">|</li>
+        <li>1-888-921-YOGA (9642)</li>
+        <li>Yoga Alliance, YA, RYS, RCYS, RPYS, RYT, E-RYT, RCYT, and RPYT are registered trademarks of 
+        Yoga Alliance. All rights reserved.</li>
+    </ul>
+</footer>
+<!--footer end -->
+</body>
+</html>

@@ -1,0 +1,95 @@
+.text-field-big {
+	width: 100%;
+	padding: 16px 15px !important;
+	font: 18px $sansSerif !important;
+}
+
+.text-field-med {
+	width: 45%;
+	padding: 16px 15px !important;
+	margin-right: 10px;
+	font: 18px $sansSerif !important;
+	
+	&.last-field {
+		margin-right: 0;
+	}
+}
+
+.newsletter-signup {
+	width: 230px !important;
+	height: 40px - 6px !important;
+	color: $tan2;
+	text-transform: uppercase;
+	border: none;
+	@include box-shadow(none);
+	@include border-radius(8px !important);
+}
+
+select {
+	height: 35px;
+	border: none;
+	padding-left: 12px;
+	-webkit-appearance: none;
+	background: #f4f0eb;
+	color: #616466;
+	line-height: auto;
+	font: 14px $sansSerif;
+	@include background(image-url('select_arrow.png') top right no-repeat, #f4f0eb !important);
+}
+
+.row-30 {
+	margin: 30px 0;
+}
+
+.row-20-30 {
+	margin: 20px 0 30px;
+}
+
+.bottom-30 {
+	margin-bottom: 30px;
+}
+
+.btn-orange {
+	border: 1px solid #e49e4e;
+	color: white;
+	font: 20px $sansSerifBold;
+	@include text-shadow(rgba(215,120,22,1) 0 -1px 0);
+	@include background(linear-gradient(#e9b633, #e49e4e));
+	
+	&:hover {
+		color: white;
+		@include background(#e49e4e);
+	}
+}
+
+.btn-orange-flat {
+	@include background(#bb3c1d);
+	color: $white;
+	text-shadow: none;
+	border: none;
+	font: 13px $sansSerif;
+	text-transform: uppercase;
+	@include box-shadow(none);
+	
+	&:hover, &:active {
+		@include background(#bb3c1d);
+		color: $white;
+	}
+}
+
+.btn-green-flat {
+	height: 35px;
+	margin-top: -10px;
+	@include background($green);
+	color: $white;
+	text-shadow: none;
+	line-height: 35px;
+	border: none;
+	font: 13px $sansSerif;
+	@include box-shadow(none);
+	
+	&:hover, &:active, &:focus {
+		@include background($green);
+		color: $white;
+	}
+}

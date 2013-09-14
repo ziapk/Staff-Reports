@@ -1279,13 +1279,25 @@ scss file for Staff Reports
   margin-left: 0;
 }
 
-.main-box {
-  padding: 30px;
+#ie8 .ya-run-report, #ie7 .ya-run-report {
+  width: auto;
 }
-@media (max-width: 767px) {
-  .main-box {
-    padding: 0;
-  }
+#ie8 .ya-left-sidebar, #ie7 .ya-left-sidebar {
+  float: left;
+  margin-left: 2.12766%;
+  width: 23.40426%;
+  margin-left: 0;
+}
+#ie8 .ya-left-sidebar:first-child, #ie7 .ya-left-sidebar:first-child {
+  margin-left: 0;
+}
+#ie8 .ya-staff-reports, #ie7 .ya-staff-reports {
+  float: left;
+  margin-left: 2.12766%;
+  width: 74.4681%;
+}
+#ie8 .ya-staff-reports:first-child, #ie7 .ya-staff-reports:first-child {
+  margin-left: 0;
 }
 
 .ya-run-report {
@@ -1346,7 +1358,11 @@ scss file for Staff Reports
 }
 .ya-organization-list > div {
   float: left;
-  margin-right: 30px;
+  margin-left: 15px;
+  width: 150px;
+}
+.ya-organization-list > div:first-child {
+  margin-left: 0;
 }
 .ya-organization-list .ya-select-org-btngroup > button {
   width: 150px;
@@ -1363,8 +1379,11 @@ scss file for Staff Reports
 }
 
 .ya-select-organization select {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   min-height: 200px;
-  max-width: 150px;
+  width: 100%;
 }
 
 .ya-financial-reports ul {
@@ -1445,4 +1464,73 @@ select.ya-empty {
 
 span[data-icon='D'] + span[data-icon='D'] {
   margin-left: -22px;
+}
+
+@media (max-width: 1200px) {
+  .ya-view-report-btn {
+    width: auto;
+    margin-right: 0;
+  }
+
+  .ya-run-report {
+    width: auto !important;
+  }
+}
+@media (max-width: 979px) {
+  .ya-view-report-btn {
+    float: none;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    padding: 0 !important;
+  }
+
+  .ya-article .ya-left-sidebar, .ya-article .ya-staff-reports, .ya-article .ya-organization-list, .ya-article .ya-organization-list > div, .ya-article .ya-staff-reports-date,
+  .ya-article .ya-staff-reports-date-to,
+  .ya-article .ya-staff-reports-date-from {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+  .ya-article .ya-staff-reports > article {
+    margin-bottom: 0;
+  }
+
+  .ya-select-organization select {
+    min-height: inherit !important;
+  }
+
+  .ya-staff-reports-date,
+  .ya-staff-reports-date-to,
+  .ya-staff-reports-date-from {
+    *zoom: 1;
+  }
+  .ya-staff-reports-date:before, .ya-staff-reports-date:after,
+  .ya-staff-reports-date-to:before,
+  .ya-staff-reports-date-to:after,
+  .ya-staff-reports-date-from:before,
+  .ya-staff-reports-date-from:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  .ya-staff-reports-date:after,
+  .ya-staff-reports-date-to:after,
+  .ya-staff-reports-date-from:after {
+    clear: both;
+  }
+
+  .ya-staff-datepicker-label {
+    width: 80px;
+  }
+
+  .btn + br {
+    display: none;
+  }
+
+  .ya-organization-list .ya-select-org-btngroup > button {
+    display: block;
+    margin: 10px 0;
+  }
 }

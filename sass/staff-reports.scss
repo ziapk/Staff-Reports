@@ -50,20 +50,26 @@ $margin_padding: 15px;
   }
   .ya-left-sidebar {
     @include makeFluidColumn(3);
+	
   }
 }
-
+#ie8, #ie7{
+	.ya-run-report{
+		width:auto;
+	}
+	.ya-left-sidebar {
+		@include makeFluidColumn(3);
+		margin-left:0;
+	}
+	.ya-staff-reports{
+		@include makeFluidColumn(9);
+	}
+}
 
 
 
 $yellow: #E5A053;
 $lead_font_size: 16px;
-.main-box {
-  padding: $margin_padding * 2;
-  @media (max-width: 767px) {
-    padding: 0;
-  }
-}
 .ya-run-report {
 	@include makeFluidColumn(8, 0 ,0);
 	@include clearfix();
@@ -98,7 +104,11 @@ $lead_font_size: 16px;
 	float: left;
 	> div {
 		float:left;
-		margin-right: $margin_padding * 2;
+		margin-left: $margin_padding;
+		width:150px;
+		&:first-child{
+			margin-left:0;
+		}
 	}
 	.ya-select-org-btngroup {
 		> button {
@@ -117,8 +127,11 @@ $lead_font_size: 16px;
 }
 .ya-select-organization  {
 	select {
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
 		min-height: 200px;
-		max-width: 150px;
+		width:100%;
 	}
 }
 .ya-financial-reports {
@@ -192,4 +205,69 @@ select.ya-empty {
 }
 span[data-icon='D'] + span[data-icon='D'] {
 	margin-left: -22px;
+}
+@media (max-width: 1200px) { 
+.ya-view-report-btn {
+	width: auto;
+	margin-right: 0;
+}
+.ya-run-report{
+	width:auto !important;
+}
+}
+@media (max-width: 979px) { 
+	.ya-view-report-btn{
+		float:none;
+	}
+}
+@media (max-width: 767px) { 
+body{
+	padding:0 !important;
+}
+.ya-article {
+	.ya-left-sidebar{
+		float:none;
+		width:100%;
+		margin:0;		
+	}
+	.ya-staff-reports{
+		 @extend .ya-left-sidebar;
+		 > article{
+			 margin-bottom:0;
+		}
+	}
+	
+}
+.ya-organization-list{
+	@extend .ya-left-sidebar;	
+	> div{
+		@extend .ya-left-sidebar;	
+
+	}
+}
+.ya-select-organization{ 
+	select{
+		min-height:inherit !important;
+	}
+}
+.ya-staff-reports-date,
+.ya-staff-reports-date-to,
+.ya-staff-reports-date-from{
+	@extend .ya-left-sidebar;	
+	@include clearfix;
+}
+.ya-staff-datepicker-label{
+	width:80px;
+}
+.btn + br{
+	display:none;
+}
+.ya-organization-list {
+	.ya-select-org-btngroup > {
+		button{
+			display:block;
+			margin:10px 0;
+		}
+	}
+}
 }

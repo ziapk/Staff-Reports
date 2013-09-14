@@ -30,6 +30,7 @@
   src: url("http://positivefutures.com/ya/web-font/27BA9B_3_0.eot?#iefix") format("embedded-opentype"), url("http://positivefutures.com/ya/web-font/27BA9B_3_0.woff") format("woff"), url("http://positivefutures.com/ya/web-font/27BA9B_3_0.ttf") format("truetype");
 }
 
+[data-icon],
 [data-icon]:before {
   font-family: 'YogaAlliance';
   content: attr(data-icon);
@@ -504,6 +505,11 @@ body {
   content: '';
 }
 
+@media (max-width: 1200px) {
+  .ya-main-content {
+    padding: 20px;
+  }
+}
 @media (max-width: 979px) {
   .ya-pageheader {
     padding-top: 25px;

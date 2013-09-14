@@ -789,14 +789,6 @@ span[data-icon="E"], span[data-icon="C"] {
   margin: 6px 0 6px 6px;
 }
 
-.container-fluid {
-  background-color: white;
-  max-width: 1170px;
-  margin: 0 auto;
-  border-radius: 6px;
-  border: 1px solid #4e453e;
-}
-
 span[data-icon] {
   margin-right: .4em;
 }

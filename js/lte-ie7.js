@@ -1,0 +1,135 @@
+/* Load this script using conditional IE comments if you need to support IE 7 and IE 6. */
+
+window.onload = function() {
+	function addIcon(el, entity) {
+		var html = el.innerHTML;
+		el.innerHTML = '<span style="font-family: \'broccolidry\'">' + entity + '</span>' + html;
+	}
+	var icons = {
+			'icon-warning' : '&#xe000;',
+			'icon-cloud' : '&#xe001;',
+			'icon-locked' : '&#xe002;',
+			'icon-inbox' : '&#xe003;',
+			'icon-comment' : '&#xe004;',
+			'icon-mic' : '&#xe005;',
+			'icon-envelope' : '&#xe006;',
+			'icon-briefcase' : '&#xe007;',
+			'icon-cart' : '&#xe008;',
+			'icon-contrast' : '&#xe009;',
+			'icon-clock' : '&#xe00a;',
+			'icon-user' : '&#xe00b;',
+			'icon-cog' : '&#xe00c;',
+			'icon-music' : '&#xe00d;',
+			'icon-twitter' : '&#xe00e;',
+			'icon-pencil' : '&#xe00f;',
+			'icon-frame' : '&#xe010;',
+			'icon-switch' : '&#xe011;',
+			'icon-star' : '&#xe012;',
+			'icon-key' : '&#xe013;',
+			'icon-chart' : '&#xe014;',
+			'icon-apple' : '&#xe015;',
+			'icon-file' : '&#xe016;',
+			'icon-plus' : '&#xe017;',
+			'icon-minus' : '&#xe018;',
+			'icon-picture' : '&#xe019;',
+			'icon-folder' : '&#xe01a;',
+			'icon-camera' : '&#xe01b;',
+			'icon-search' : '&#xe01c;',
+			'icon-dribbble' : '&#xe01d;',
+			'icon-forrst' : '&#xe01e;',
+			'icon-feed' : '&#xe01f;',
+			'icon-blocked' : '&#xe020;',
+			'icon-target' : '&#xe021;',
+			'icon-play' : '&#xe022;',
+			'icon-pause' : '&#xe023;',
+			'icon-bug' : '&#xe024;',
+			'icon-console' : '&#xe025;',
+			'icon-film' : '&#xe026;',
+			'icon-type' : '&#xe027;',
+			'icon-home' : '&#xe028;',
+			'icon-earth' : '&#xe029;',
+			'icon-location' : '&#xe02a;',
+			'icon-info' : '&#xe02b;',
+			'icon-eye' : '&#xe02c;',
+			'icon-heart' : '&#xe02d;',
+			'icon-bookmark' : '&#xe02e;',
+			'icon-wrench' : '&#xe02f;',
+			'icon-calendar' : '&#xe030;',
+			'icon-window' : '&#xe031;',
+			'icon-monitor' : '&#xe032;',
+			'icon-mobile' : '&#xe033;',
+			'icon-droplet' : '&#xe034;',
+			'icon-mouse' : '&#xe035;',
+			'icon-refresh' : '&#xe036;',
+			'icon-location-2' : '&#xe037;',
+			'icon-tag' : '&#xe038;',
+			'icon-phone' : '&#xe039;',
+			'icon-star-2' : '&#xe03a;',
+			'icon-pointer' : '&#xe03b;',
+			'icon-thumbs-up' : '&#xe03c;',
+			'icon-thumbs-down' : '&#xe03d;',
+			'icon-headphones' : '&#xe03e;',
+			'icon-move' : '&#xe03f;',
+			'icon-checkmark' : '&#xe040;',
+			'icon-cancel' : '&#xe041;',
+			'icon-skype' : '&#xe042;',
+			'icon-gift' : '&#xe043;',
+			'icon-cone' : '&#xe044;',
+			'icon-alarm' : '&#xe045;',
+			'icon-coffee' : '&#xe046;',
+			'icon-basket' : '&#xe047;',
+			'icon-flag' : '&#xe048;',
+			'icon-ipod' : '&#xe049;',
+			'icon-trashcan' : '&#xe04a;',
+			'icon-bolt' : '&#xe04b;',
+			'icon-ampersand' : '&#xe04c;',
+			'icon-compass' : '&#xe04d;',
+			'icon-list' : '&#xe04e;',
+			'icon-grid' : '&#xe04f;',
+			'icon-volume' : '&#xe050;',
+			'icon-volume-2' : '&#xe051;',
+			'icon-stats' : '&#xe052;',
+			'icon-target-2' : '&#xe053;',
+			'icon-forward' : '&#xe054;',
+			'icon-paperclip' : '&#xe055;',
+			'icon-keyboard' : '&#xe056;',
+			'icon-crop' : '&#xe057;',
+			'icon-floppy' : '&#xe058;',
+			'icon-filter' : '&#xe059;',
+			'icon-trophy' : '&#xe05a;',
+			'icon-diary' : '&#xe05b;',
+			'icon-address-book' : '&#xe05c;',
+			'icon-stop' : '&#xe05d;',
+			'icon-smiley' : '&#xe05e;',
+			'icon-shit' : '&#xe05f;',
+			'icon-bookmark-2' : '&#xe060;',
+			'icon-camera-2' : '&#xe061;',
+			'icon-lamp' : '&#xe062;',
+			'icon-disk' : '&#xe063;',
+			'icon-button' : '&#xe064;',
+			'icon-database' : '&#xe065;',
+			'icon-credit-card' : '&#xe066;',
+			'icon-atom' : '&#xe067;',
+			'icon-winsows' : '&#xe068;',
+			'icon-target-3' : '&#xe069;',
+			'icon-battery' : '&#xe06a;',
+			'icon-code' : '&#xe06b;'
+		},
+		els = document.getElementsByTagName('*'),
+		i, attr, c, el;
+	for (i = 0; ; i += 1) {
+		el = els[i];
+		if(!el) {
+			break;
+		}
+		attr = el.getAttribute('data-icon');
+		if (attr) {
+			addIcon(el, attr);
+		}
+		c = el.className;
+		c = c.match(/icon-[^\s'"]+/);
+		if (c && icons[c[0]]) {
+			addIcon(el, icons[c[0]]);
+		}
+	}
+};

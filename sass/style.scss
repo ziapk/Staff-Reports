@@ -21,6 +21,7 @@
 
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
+[data-icon],
 [data-icon]:before {
 	font-family: 'YogaAlliance';
 	content: attr(data-icon);
@@ -187,7 +188,12 @@ body{
 }
 .#{$forBoxSizing} {
 }
+@media (max-width: 1200px) { 
+	.#{$contentArea}{
+		padding: $basePadding;
+	}
 
+}
 @media (max-width: 979px) { 
 .#{$pageHeader}{
 	padding-top:25px;

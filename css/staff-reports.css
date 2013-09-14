@@ -1533,4 +1533,8 @@ span[data-icon='D'] + span[data-icon='D'] {
     display: block;
     margin: 10px 0;
   }
+
+  .ya-batch-ctrl-group label {
+    width: 120px;
+  }
 }
